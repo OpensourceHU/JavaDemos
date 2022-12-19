@@ -12,26 +12,31 @@ package problem_list.recursive;
  * @date 2020/6/11 0011 9:37
  */
 public class MachineWalk {
-    static int num = 0;
+  static int num = 0;
 
-    public static void main(String[] args) {
-        test();
-    }
+  public static void main(String[] args) {
+    test();
+  }
 
-    public static int walk(int N, int K, int start, int end)//N个位置走K步,从start走到end
-    {
-        if ((start == end) && (K == 0)) {
-            return 1;
-        }
-        if (K == 0) return 0;
-        if (start == N && K > 0) return walk(N, K - 1, start - 1, end);
-        if (start == 1 && K > 0) return walk(N, K - 1, start + 1, end);
-        else {
-            return (walk(N, K - 1, start + 1, end) + walk(N, K - 1, start - 1, end));
-        }
+  public static int walk(int N, int K, int start, int end)//N个位置走K步,从start走到end
+  {
+    if ((start == end) && (K == 0)) {
+      return 1;
     }
+    if (K == 0) {
+      return 0;
+    }
+    if (start == N && K > 0) {
+      return walk(N, K - 1, start - 1, end);
+    }
+    if (start == 1 && K > 0) {
+      return walk(N, K - 1, start + 1, end);
+    } else {
+      return (walk(N, K - 1, start + 1, end) + walk(N, K - 1, start - 1, end));
+    }
+  }
 
-    public static synchronized void test() {
-        return;
-    }
+  public static synchronized void test() {
+    return;
+  }
 }

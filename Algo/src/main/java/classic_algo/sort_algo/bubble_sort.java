@@ -1,7 +1,6 @@
 package classic_algo.sort_algo;
 
 import classic_algo.dataChecker;
-
 import java.util.Arrays;
 
 /**
@@ -11,16 +10,16 @@ import java.util.Arrays;
  * @date 2020/4/13 0013 20:51
  */
 public class bubble_sort {
-    public static void main(String[] args) {
-        int[] array = dataChecker.randomIntArrayGenerator(10000);
-        int[] array2 = Arrays.copyOf(array, array.length);
-        int[] array3 = Arrays.copyOf(array, array.length);
+  public static void main(String[] args) {
+    int[] array = dataChecker.randomIntArrayGenerator(10000);
+    int[] array2 = Arrays.copyOf(array, array.length);
+    int[] array3 = Arrays.copyOf(array, array.length);
 
-        long begin = System.currentTimeMillis();
-        bubbleSort(array);
-        long end = System.currentTimeMillis();
-        show(array);
-        System.out.println("冒泡排序耗时:" + (end - begin));
+    long begin = System.currentTimeMillis();
+    bubbleSort(array);
+    long end = System.currentTimeMillis();
+    show(array);
+    System.out.println("冒泡排序耗时:" + (end - begin));
 
 //        begin = System.currentTimeMillis();
 //        Arrays.sort(array2);
@@ -34,9 +33,9 @@ public class bubble_sort {
 //        show(array3);
 //        System.out.println("自己写的快排耗时:"+(end-begin));
 
-    }
+  }
 
-    //    public static void  bubbleSort(int[] array)
+  //    public static void  bubbleSort(int[] array)
 //    {
 //        for(int i=0;i<array.length;i++)
 //            for(int j=0;j<array.length-i-1;j++)
@@ -50,23 +49,23 @@ public class bubble_sort {
 //                }
 //            }
 //    }
-    public static void bubbleSort(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length - 1 - i; j++) {
-                if (array[j] > array[j + 1]) {
-                    int tmp = array[j + 1];
-                    array[j + 1] = array[j];
-                    array[j] = tmp;
-                }
-            }
+  public static void bubbleSort(int[] array) {
+    for (int i = 0; i < array.length; i++) {
+      for (int j = 0; j < array.length - 1 - i; j++) {
+        if (array[j] > array[j + 1]) {
+          int tmp = array[j + 1];
+          array[j + 1] = array[j];
+          array[j] = tmp;
         }
+      }
     }
+  }
 
-    public static void show(int[] array) {
-        for (int i : array
-        ) {
-            System.out.print(i + "\t");
-        }
-        System.out.println();
+  public static void show(int[] array) {
+    for (int i : array
+    ) {
+      System.out.print(i + "\t");
     }
+    System.out.println();
+  }
 }

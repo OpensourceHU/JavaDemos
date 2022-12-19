@@ -7,24 +7,28 @@ package problem_list.recursive;
  * @date 2020/5/14 0014 17:20
  */
 public class Backpack_Problem {
-    public static int process(int[] weight, int[] value, int capacity, int index, int selected) {
-        if (index == weight.length - 1) return 0;
-        if (selected > capacity) return -1;
-        //如果不要当前物品
-        int p1 = process(weight, value, capacity, index + 1, selected);
-        //如果要当前物品
-        int p2next = process(weight, value, capacity, index + 1, selected + weight[index]);
-        int p2 = -1;
-        if (p2next != -1) {
-            p2 = value[index] + p2next;
-        }
-        return Math.max(p1, p2);
+  public static int process(int[] weight, int[] value, int capacity, int index, int selected) {
+    if (index == weight.length - 1) {
+      return 0;
     }
+    if (selected > capacity) {
+      return -1;
+    }
+    //如果不要当前物品
+    int p1 = process(weight, value, capacity, index + 1, selected);
+    //如果要当前物品
+    int p2next = process(weight, value, capacity, index + 1, selected + weight[index]);
+    int p2 = -1;
+    if (p2next != -1) {
+      p2 = value[index] + p2next;
+    }
+    return Math.max(p1, p2);
+  }
 
-    public static void main(String[] args) {
-        int[] weight = new int[]{1, 2, 3};
-        int[] value = new int[]{3, 2, 1};
-        int max = process(weight, value, 5, 0, 0);
-        System.out.println(max);
-    }
+  public static void main(String[] args) {
+    int[] weight = new int[] {1, 2, 3};
+    int[] value = new int[] {3, 2, 1};
+    int max = process(weight, value, 5, 0, 0);
+    System.out.println(max);
+  }
 }

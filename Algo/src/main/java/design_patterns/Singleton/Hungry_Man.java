@@ -9,13 +9,13 @@ package design_patterns.Singleton;
  */
 public class Hungry_Man {
 
-    private static final Hungry_Man INSTANCE = new Hungry_Man();
+  private static final Hungry_Man INSTANCE = new Hungry_Man();
 
-    private Hungry_Man() {
-    }
+  private Hungry_Man() {
+  }
 
-    public static Hungry_Man getInstance() {
-        return INSTANCE;
-    }
+  public static Hungry_Man getInstance() {
+    return INSTANCE;
+  }
 
 }

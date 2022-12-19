@@ -9,7 +9,7 @@ import java.util.Arrays;
  * @modified By:
  */
 public class Arraytest {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 //        int[] a1 = new int[]{1,2,3,4,5};
 //        for (int val:a1
 //             ) {
@@ -32,11 +32,11 @@ public class Arraytest {
 //            System.out.println();
 //        }
 //
-        int[] a1 = new int[]{3, 4, 5, 6};
-        int[] a2 = new int[]{3, 4, 5, 6};
-        System.out.println("equal?  " + Arrays.equals(a1, a2));
-        int[] c = Arrays.copyOf(a1, a1.length * 2);
-        int scores[] = new int[]{57, 81, 68, 75, 91};
+    int[] a1 = new int[] {3, 4, 5, 6};
+    int[] a2 = new int[] {3, 4, 5, 6};
+    System.out.println("equal?  " + Arrays.equals(a1, a2));
+    int[] c = Arrays.copyOf(a1, a1.length * 2);
+    int scores[] = new int[] {57, 81, 68, 75, 91};
 //        int[] copy = Arrays.copyOf(scores,scores.length+3);
 //        for (int i:copy
 //             ) {
@@ -48,11 +48,11 @@ public class Arraytest {
 //        ) {
 //            System.out.println(i);
 //        }
-        int[] clone = scores.clone();
-        for (int i : clone
-        ) {
-            System.out.println(i);
-        }
-
+    int[] clone = scores.clone();
+    for (int i : clone
+    ) {
+      System.out.println(i);
     }
+
+  }
 }

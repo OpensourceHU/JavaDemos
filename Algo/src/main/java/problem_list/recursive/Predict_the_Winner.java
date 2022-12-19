@@ -7,9 +7,11 @@ package problem_list.recursive;
  * @date 2020/5/14 0014 18:03
  */
 public class Predict_the_Winner {
-    public static int predict(int[] arr, int left, int right) {
-        if (left == right) return arr[left];
-        //抽左边
-        return 0;
+  public static int predict(int[] arr, int left, int right) {
+    if (left == right) {
+      return arr[left];
     }
+    //抽左边
+    return 0;
+  }
 }

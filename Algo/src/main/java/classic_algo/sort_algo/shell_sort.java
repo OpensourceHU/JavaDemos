@@ -9,13 +9,13 @@ import classic_algo.dataChecker;
  * @date 2020/4/14 0014 21:41
  */
 public class shell_sort {
-    public static void main(String[] args) {
-        int[] array = dataChecker.randomIntArrayGenerator(10000);
-        shellSort(array);
-        for (int i : array
-        ) {
-            System.out.println(i + " ");
-        }
+  public static void main(String[] args) {
+    int[] array = dataChecker.randomIntArrayGenerator(10000);
+    shellSort(array);
+    for (int i : array
+    ) {
+      System.out.println(i + " ");
+    }
 //        int[] array2 = Arrays.copyOf(array, array.length);
 //        int[] array3 = Arrays.copyOf(array, array.length);
 //        int[] array4 = Arrays.copyOf(array, array.length);
@@ -40,20 +40,20 @@ public class shell_sort {
 //        end = System.currentTimeMillis();
 //        show(array4);
 //        System.out.println("未优化的插入排序耗时"+(end-begind));
-    }
+  }
 
-    public static void shellSort(int[] array) {
-        for (int gap = array.length / 2; gap > 0; gap /= 2) {
-            for (int i = gap; i < array.length; i++) {//从第gap个元素开始  逐个跨组处理(反正最后每个元素的处理方法相同,按不按组无所谓)
-                int tmp = array[i];
-                int j;
-                for (j = i; (j - gap) >= 0 && tmp < array[j - gap]; j -= gap) {
-                    array[j] = array[j - gap];
-                }
-                array[j] = tmp;
-            }
+  public static void shellSort(int[] array) {
+    for (int gap = array.length / 2; gap > 0; gap /= 2) {
+      for (int i = gap; i < array.length; i++) {//从第gap个元素开始  逐个跨组处理(反正最后每个元素的处理方法相同,按不按组无所谓)
+        int tmp = array[i];
+        int j;
+        for (j = i; (j - gap) >= 0 && tmp < array[j - gap]; j -= gap) {
+          array[j] = array[j - gap];
         }
+        array[j] = tmp;
+      }
     }
+  }
 //    private static void shellSort(int[] arr) {
 //        //step:步长
 //        for (int step = arr.length / 2; step > 0; step /= 2) {

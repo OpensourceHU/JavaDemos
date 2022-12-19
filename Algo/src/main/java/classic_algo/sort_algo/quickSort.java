@@ -7,13 +7,13 @@ package classic_algo.sort_algo;
  * @modified By:
  */
 public class quickSort {
-    public static void showlist(int[] list) {
-        for (int i : list
-        ) {
-            System.out.print(i + "\t");
-        }
-        System.out.println("\n");
+  public static void showlist(int[] list) {
+    for (int i : list
+    ) {
+      System.out.print(i + "\t");
     }
+    System.out.println("\n");
+  }
 //
 //    public static int getMiddle(int[] list, int low, int high) {
 //        int tmp = list[low]; // 数组的第一个值作为中轴（分界点或关键数据）
@@ -53,40 +53,41 @@ public class quickSort {
 //        }
 //    }
 
-    /************************自己复写一遍****************************/
-    public static int getmiddle(int[] str, int low, int high) {
-        int tmp = str[low];
-        while (low < high) {
-            while (low < high && tmp < str[high]) {
-                high--;
-            }
-            str[low] = str[high];
-            while (low < high && tmp > str[low]) {
-                low++;
-            }
-            str[high] = str[low];
-        }
-        str[low] = tmp;
-        return low;
+  /************************自己复写一遍****************************/
+  public static int getmiddle(int[] str, int low, int high) {
+    int tmp = str[low];
+    while (low < high) {
+      while (low < high && tmp < str[high]) {
+        high--;
+      }
+      str[low] = str[high];
+      while (low < high && tmp > str[low]) {
+        low++;
+      }
+      str[high] = str[low];
     }
+    str[low] = tmp;
+    return low;
+  }
 
-    public static void uncksort(int[] str, int low, int high) {
-        if (low < high) {
-            int middle = getmiddle(str, low, high);
-            uncksort(str, low, middle - 1);
-            uncksort(str, middle + 1, high);
-        }
+  public static void uncksort(int[] str, int low, int high) {
+    if (low < high) {
+      int middle = getmiddle(str, low, high);
+      uncksort(str, low, middle - 1);
+      uncksort(str, middle + 1, high);
     }
+  }
 
-    public static void quickSort(int[] str) {
-        if (str.length > 0)
-            uncksort(str, 0, str.length - 1);
+  public static void quickSort(int[] str) {
+    if (str.length > 0) {
+      uncksort(str, 0, str.length - 1);
     }
+  }
 
-    public static void main(String[] args) {
-        int[] number = {7, 3, 4, 6, 5, 1, 8, 9, 2, 10};
-        System.out.println(getmiddle(number, 0, number.length - 1));
-        showlist(number);
+  public static void main(String[] args) {
+    int[] number = {7, 3, 4, 6, 5, 1, 8, 9, 2, 10};
+    System.out.println(getmiddle(number, 0, number.length - 1));
+    showlist(number);
 
-    }
+  }
 }

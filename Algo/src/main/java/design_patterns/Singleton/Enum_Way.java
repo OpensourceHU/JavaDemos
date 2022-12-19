@@ -7,5 +7,5 @@ package design_patterns.Singleton;
  * @date 2022/4/13 9:53
  */
 public enum Enum_Way {
-    INSTANCE;
+  INSTANCE;
 }
